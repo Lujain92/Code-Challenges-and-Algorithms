@@ -1,4 +1,4 @@
-from challenge01 import Node,Linked_list
+from challenge01 import Node,Linked_list,delete
 
 
 def test_push():
@@ -21,7 +21,7 @@ def test_delete():
     link.push(node2)
     link.push(node3)
     link.push(node4)
-    link.delete(node2)
+    delete(node2)
     assert link.all_in_list()==[4,1,9]
     
 def test_delete():
@@ -34,5 +34,5 @@ def test_delete():
     link.push(node2)
     link.push(node3)
     link.push(node4)
-    link.delete(node3)
+    delete(node3)
     assert link.all_in_list()==[4,5,9]
