@@ -1,2 +1,2 @@
 # White Board
-![middle](white.PNG)
+![middle](../../../assets/linked-list/2.PNG)
