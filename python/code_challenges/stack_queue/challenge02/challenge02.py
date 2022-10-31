@@ -1,11 +1,11 @@
 def isValid( s) :
         stack = []
-        lookup = {')':'(', '}':'{', ']':'['}
+        lpara = {')':'(', '}':'{', ']':'['}
 
-        for p in s:
-            if p in lookup.values():
-                stack.append(p)
-            elif stack and lookup[p] == stack[-1]:
+        for ss in s:
+            if ss in lpara.values():
+                stack.append(ss)
+            elif stack and lpara[ss] == stack[-1]:
                 stack.pop()
             else:
                 return False
