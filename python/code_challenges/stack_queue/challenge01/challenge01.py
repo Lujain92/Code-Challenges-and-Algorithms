@@ -1,88 +1,62 @@
 
-class Node :
-    def __init__(self,value):
-        self.value=value
-        self.next=None
-class Stack :
+class MyQueue(object):
+    '''
+    Class used MyQueue that implemnet using 2 stacks
+    '''
+
     def __init__(self):
-        self.top=None
-        self.size=0
-    def push(self,value):
-        node=Node(value)
-        if self.top :
-            node.next=self.top
-        self.top=node
-        self.size+=1
-        return self.top.value
+        '''
+        constrcutor that has 2 stacks the implement by list
+        '''
+        self.s1=[]
+        self.s2=[]
+
+        
+
+    def push(self, x):
+        """
+        method used to push the element on it
+        :type x: int
+        :rtype: None
+        """
+        while self.s1 :
+            self.s2.append(self.s1.pop())
+        self.s1.append(x)
+        while self.s2:
+            self.s1.append(self.s2.pop())
+       
+        
+        
+        
+        
+
     def pop(self):
-        if self.top:
-            temp=self.top
-            self.top=self.top.next
-            self.size-=1
-            return temp.value
-        else:
-            return("this stack is empty")
+        """
+        method used to pop the last element and return it
+        :rtype: int
+        """
+
+        return self.s1.pop()
     def peek(self):
-        if self.top:
-            return self.top.value
-        else:
-            return("This stack is empty")
+        """
+        method used to return the last element
+        :rtype: int
+        """
+        
+        
+        return self.s1[-1]
+        
+        
 
-    def is_empty(self):
-        return self.size == 0
-
-    def get_size(self):
-        return self.size
-
-
-
-class Queue :
-    '''
-    class queue to create queue 
-    and it is implemnted by 2 stack
-
-    '''
-    def __init__(self):
-        self.stack1=Stack()
-        self.stack2=Stack()
-
-    def enqueue(self,val):
-        pushed=self.stack1.push(val)
-
-        return pushed
-
-    def dequeue(self):
-        self.stack2.push(self.stack1.pop())
-        poped=self.stack2.pop()
-        return poped
-    def peek(self):
-        pass
-    def is_empty(self):
-        pass
+    def empty(self):
+        """
+        method used to check if queue is empty or not
+        :rtype: bool
+        """
+        return len(self.s1)==0
+        
 
 
-
-
-# sta=Stack()
-# sta2=Stack()
-
-# sta.push(1)
-# sta.push(2)
-# sta.push(3)
-# sta.push(4)
-
-# sta2.push(sta.pop())
-# sta2.push(sta.pop())
-# sta2.push(sta.pop())
-# sta2.push(sta.pop())
-# # q= Queue()
-# # print(q.enqueue(2))
-# # print(q.enqueue(3))
-# # print(q.enqueue(4))
-# # print(q.dequeue())
-# # print(q.dequeue())
-# # print(q.dequeue())
-# print(sta2.pop())
 
 
 
