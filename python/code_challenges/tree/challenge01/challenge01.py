@@ -1,4 +1,7 @@
 class Node:
+    '''
+    class node used to create node
+    '''
     def __init__(self,value):
         self.value = value
         self.left = None
@@ -6,11 +9,16 @@ class Node:
 
 
 
-def buildTree(self, preorder, inorder):
+def create_tree(preorder, inorder):
+    '''
+    class create_tree used to create tree from preorder and inorder list
+    input inorder,preorder:list,list
+    output :tree
+    '''
     if inorder:
-        ind = inorder.index(preorder.pop(0))
-        root = Node(inorder[ind])
-        root.left = self.buildTree(preorder, inorder[0:ind])
-        root.right = self.buildTree(preorder, inorder[ind+1:])
+        i = inorder.index(preorder.pop(0))
+        root = Node(inorder[i])
+        root.left = create_tree(preorder, inorder[0:i])
+        root.right = create_tree(preorder, inorder[i+1:])
         return root
             
