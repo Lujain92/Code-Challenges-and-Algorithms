@@ -32,7 +32,7 @@ class Stack :
 
     def get_size(self):
         return self.size
-class MyQueue(object):
+class MyQueue():
     '''
     Class used MyQueue that implemnet using 2 stacks
     '''
@@ -52,10 +52,11 @@ class MyQueue(object):
         :type x: int
         :rtype: None
         """
-        while self.s1 :
+        
+        while self.s1.top is not None :
             self.s2.push(self.s1.pop())
         self.s1.push(x)
-        while self.s2:
+        while self.s2.top is not None:
             self.s1.push(self.s2.pop())
        
         
@@ -93,9 +94,3 @@ class MyQueue(object):
 
 
 
-# q=MyQueue()
-# q.push(1)
-# q.push(2)
-# q.push(3)
-# q.push(4)
-# print(q.pop())
