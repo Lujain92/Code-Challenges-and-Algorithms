@@ -1,1 +1,0 @@
-![i](../../../python/assets/hashtable/222.PNG)
