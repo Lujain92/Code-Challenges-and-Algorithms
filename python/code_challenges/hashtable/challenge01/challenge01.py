@@ -44,12 +44,17 @@ class Tree:
     #     return self.root
 #Write here the code challenge solution
 def findTarget(root, k) :
-        s=[]
+        '''
+        function find target accept 2 argument and check 
+        if the root has 2 node value equal to target 
+        if yes return true otherwise false
+        '''
+        s=set()
         def dfs(root):
             if root:
                 if root.value in s:
                     return True
-                s.append(k-root.value)
+                s.add(k-root.value)
                 return dfs(root.left) or dfs(root.right)
             return False
         return dfs(root)
