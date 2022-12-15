@@ -10,3 +10,4 @@ def l(s):
     if h[i]>1:
       return i
   return 'no repeattion'
+
