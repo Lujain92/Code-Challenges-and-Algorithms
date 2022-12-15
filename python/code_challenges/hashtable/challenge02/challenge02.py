@@ -1,6 +1,6 @@
 import re
 
-def l(s):
+def repeated(s):
   h={}
   s = re.sub(r'[^\w\s]', '', s)
   print(s)
@@ -10,3 +10,4 @@ def l(s):
     if h[i]>1:
       return i
   return 'no repeattion'
+
