@@ -1,6 +1,6 @@
 import re
 
-def l(s):
+def repeated(s):
   h={}
   s = re.sub(r'[^\w\s]', '', s)
   print(s)
