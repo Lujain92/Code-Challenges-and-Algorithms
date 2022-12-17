@@ -17,3 +17,14 @@ def test_two():
 
 def test_three():
     assert findTarget(r.root,91)==False
+
+def test_four():
+    q=Tree()
+    assert findTarget(q.root,91)==False
+def test_four():
+    q=Tree()
+    assert findTarget(q.root,91)==False
+def test_five():
+    l=Tree()
+    l.insert(1)
+    assert findTarget(l.root,1)==False

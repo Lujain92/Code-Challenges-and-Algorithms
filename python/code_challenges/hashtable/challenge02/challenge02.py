@@ -9,5 +9,5 @@ def repeated(s):
   for i in s.split():
     if h[i]>1:
       return i
-  return 'no repeattion'
+  return "No Repetition"
 
