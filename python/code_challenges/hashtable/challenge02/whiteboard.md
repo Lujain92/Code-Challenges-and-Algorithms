@@ -1,1 +1,1 @@
-![white_board](../../../assets/hashtable/whiteboard.png)
+![white_board](../../../assets/hashtable/hash.png)
