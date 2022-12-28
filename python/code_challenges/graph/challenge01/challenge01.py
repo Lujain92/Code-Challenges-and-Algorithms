@@ -1,28 +1,42 @@
-class Node:
-    def __init__(self, value=None):
-        self.value = value
-    
- 
-
-class Edge:
-    def __init__(self,vertex,weight=0):
-        self.vertex = vertex
-        self.weight = weight
-
-class Grahp:
+# Write here the code challenge solution
+class Graph:
     def __init__(self):
-        self.adj_list = {}
-
-    def add_node(self,value):
-        new_vertex = Node(value)
-        self.adj_list[new_vertex] = []
-        return new_vertex
-
-    def add_edge(self,node1,node2,weight=0):
+        self.adjacencyList={}
+    
+    def addVertex(self,vertex):
+        '''
+        method used to add vertex
+        '''
+        if vertex not in self.adjacencyList:
+            self.adjacencyList[vertex]=[]
+        # print(self.adjacencyList)
+    
+    def addEdge(self,v1,v2):
+        '''
+        method used to add edge
+        '''
+        self.adjacencyList[v1].append(v2)
+        self.adjacencyList[v2].append(v1)
+        # print(self.adjacencyList)
         
-       if node1 and node2:
-            edge1 = Edge(node2,weight)
-            self.adj_list[node1].append(edge1)
-
-            edge2 = Edge(node1,weight)
-            self.adj_list[node2].append(edge2)
+   
+    def breadthFirst(self,start):
+        '''
+        method used to return a lost contain all graph node visited
+        input: node
+        output:list
+        '''
+        queue=[start]
+        result=[]
+        visited={}
+        visited[start]=True
+        
+        while len(queue):
+            currentVertex=queue.pop(0)
+            result.append(currentVertex)
+            
+            for neighbor in self.adjacencyList[currentVertex]:
+                if neighbor not in visited:
+                    visited[neighbor]=True
+                    queue.append(neighbor)
+        return result
